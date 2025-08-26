@@ -6,7 +6,7 @@
   <title>Bienvenidos a la Playa</title>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
     * {
@@ -32,6 +32,73 @@
       position: absolute;
       top: 0;
       left: 0;
+      z-index: 0;
+    }
+
+    /* Navbar */
+    nav {
+      background-color: rgba(255, 152, 0, 0.9);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      position: relative;
+      z-index: 3;
+    }
+
+    nav .logo {
+      font-family: 'Pacifico', cursive;
+      font-size: 1.8rem;
+      color: white;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li {
+      position: relative;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 12px;
+      transition: background 0.3s;
+    }
+
+    nav ul li a:hover {
+      background-color: rgba(255, 235, 59, 0.4);
+      border-radius: 5px;
+    }
+
+    /* Submenú */
+    nav ul li ul {
+      display: none;
+      position: absolute;
+      top: 40px;
+      left: 0;
+      background-color: rgba(255, 152, 0, 0.95);
+      border-radius: 5px;
+      padding: 10px 0;
+      z-index: 999;
+    }
+
+    nav ul li:hover ul {
+      display: block;
+    }
+
+    nav ul li ul li {
+      width: 150px;
+      text-align: left;
+    }
+
+    nav ul li ul li a {
+      display: block;
+      padding: 8px 15px;
     }
 
     .container {
@@ -47,6 +114,7 @@
     }
 
     h1 {
+      font-family: 'Pacifico', cursive;
       font-size: 4rem;
       margin-bottom: 20px;
       color: #ffeb3b;
@@ -77,6 +145,25 @@
 </head>
 <body>
   <div class="overlay"></div>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="logo">Playa Bonita</div>
+    <ul>
+      <li><a href="#">Inicio</a></li>
+      <li><a href="#">Reservaciones</a></li>
+      <li>
+        <a href="#">Destinos ▾</a>
+        <ul>
+          <li><a href="#">Costa Esmeralda</a></li>
+          <li><a href="#">Isla Paraíso</a></li>
+          <li><a href="#">Bahía del Sol</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- CONTENIDO PRINCIPAL -->
   <div class="container">
     <h1>Bienvenidos al Paraíso</h1>
     <p>Descubre la tranquilidad, el sol y el mar en un lugar donde cada día es una aventura tropical.</p>
